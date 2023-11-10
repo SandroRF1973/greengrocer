@@ -19,48 +19,50 @@ class SignInScreen extends StatelessWidget {
           child: Column(
             children: [
               Expanded(
-                  child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  //Nome do app
-                  Text.rich(
-                    TextSpan(
-                      style: const TextStyle(
-                        fontSize: 40,
-                      ),
-                      children: [
-                        const TextSpan(
-                          text: 'Green',
-                          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    //Nome do app
+                    Text.rich(
+                      TextSpan(
+                        style: const TextStyle(
+                          fontSize: 40,
                         ),
-                        TextSpan(
-                          text: 'grocer',
-                          style: TextStyle(color: CustomColors.customContrastColor),
-                        ),
-                      ],
-                    ),
-                  ),
-                  // Categorias
-                  SizedBox(
-                    height: 30,
-                    child: DefaultTextStyle(
-                      style: const TextStyle(fontSize: 25),
-                      child: AnimatedTextKit(
-                        pause: Duration.zero,
-                        repeatForever: true,
-                        animatedTexts: [
-                          FadeAnimatedText('Frutas'),
-                          FadeAnimatedText('Verduras'),
-                          FadeAnimatedText('Legumes'),
-                          FadeAnimatedText('Carnes'),
-                          FadeAnimatedText('Cereais'),
-                          FadeAnimatedText('Laticínios'),
+                        children: [
+                          const TextSpan(
+                            text: 'Green',
+                            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                          ),
+                          TextSpan(
+                            text: 'grocer',
+                            style: TextStyle(color: CustomColors.customContrastColor),
+                          ),
                         ],
                       ),
                     ),
-                  ),
-                ],
-              )),
+                    // Categorias
+                    SizedBox(
+                      height: 30,
+                      child: DefaultTextStyle(
+                        style: const TextStyle(fontSize: 25),
+                        child: AnimatedTextKit(
+                          pause: Duration.zero,
+                          repeatForever: true,
+                          animatedTexts: [
+                            FadeAnimatedText('Frutas'),
+                            FadeAnimatedText('Verduras'),
+                            FadeAnimatedText('Legumes'),
+                            FadeAnimatedText('Carnes'),
+                            FadeAnimatedText('Cereais'),
+                            FadeAnimatedText('Laticínios'),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+
               // Formulário
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 40),
@@ -134,6 +136,7 @@ class SignInScreen extends StatelessWidget {
                         ],
                       ),
                     ),
+
                     // Botão de novo usuário
                     SizedBox(
                       height: 50,
