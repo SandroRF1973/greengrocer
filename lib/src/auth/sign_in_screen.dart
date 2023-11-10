@@ -10,11 +10,31 @@ class SignInScreen extends StatelessWidget {
       backgroundColor: Colors.green,
       body: Column(
         children: [
-          Expanded(
-            child: Container(
-              color: Colors.green,
-            ),
-          ),
+          const Expanded(
+              child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text.rich(
+                TextSpan(
+                  style: TextStyle(
+                    fontSize: 40,
+                  ),
+                  children: [
+                    TextSpan(
+                      text: 'Green',
+                      style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                    ),
+                    TextSpan(
+                      text: 'grocer',
+                      style: TextStyle(color: Colors.red),
+                    ),
+                  ],
+                ),
+              ),
+              Text('Frutas'),
+            ],
+          )),
+          // Formulário
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 40),
             decoration: const BoxDecoration(
