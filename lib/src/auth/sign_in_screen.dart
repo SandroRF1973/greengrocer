@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:greengrocer/src/auth/components/custom_text_field.dart';
 
@@ -10,11 +11,12 @@ class SignInScreen extends StatelessWidget {
       backgroundColor: Colors.green,
       body: Column(
         children: [
-          const Expanded(
+          Expanded(
               child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text.rich(
+              //Nome do app
+              const Text.rich(
                 TextSpan(
                   style: TextStyle(
                     fontSize: 40,
@@ -31,7 +33,25 @@ class SignInScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              Text('Frutas'),
+              // Categorias
+              SizedBox(
+                height: 30,
+                child: DefaultTextStyle(
+                  style: const TextStyle(fontSize: 25),
+                  child: AnimatedTextKit(
+                    pause: Duration.zero,
+                    repeatForever: true,
+                    animatedTexts: [
+                      FadeAnimatedText('Frutas'),
+                      FadeAnimatedText('Verduras'),
+                      FadeAnimatedText('Legumes'),
+                      FadeAnimatedText('Carnes'),
+                      FadeAnimatedText('Cereais'),
+                      FadeAnimatedText('Laticínios'),
+                    ],
+                  ),
+                ),
+              ),
             ],
           )),
           // Formulário
