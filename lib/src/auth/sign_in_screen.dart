@@ -150,7 +150,7 @@ class SignInScreen extends StatelessWidget {
                         ),
                         onPressed: () {
                           Navigator.of(context).push(
-                            MaterialPageRoute(builder: (c) => const SignUpScreen()),
+                            MaterialPageRoute(builder: (c) => SignUpScreen()),
                           );
                         },
                         child: const Text(
