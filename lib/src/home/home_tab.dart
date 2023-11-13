@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:greengrocer/src/config/custom_colors.dart';
+// ignore: library_prefixes
+import 'package:badges/badges.dart' as packageBadge;
 
 class HomeTab extends StatelessWidget {
   const HomeTab({super.key});
@@ -30,10 +32,27 @@ class HomeTab extends StatelessWidget {
           ),
         ),
         actions: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.shopping_cart),
-            color: CustomColors.customSwatchColor,
+          Padding(
+            padding: const EdgeInsets.only(top: 15, right: 15),
+            child: GestureDetector(
+              onTap: () {},
+              child: packageBadge.Badge(
+                badgeStyle: packageBadge.BadgeStyle(
+                  badgeColor: CustomColors.customContrastColor,
+                ),
+                badgeContent: const Text(
+                  '2',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 12,
+                  ),
+                ),
+                child: Icon(
+                  Icons.shopping_cart,
+                  color: CustomColors.customSwatchColor,
+                ),
+              ),
+            ),
           ),
         ],
       ),
