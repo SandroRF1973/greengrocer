@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:greengrocer/src/config/custom_colors.dart';
 // ignore: library_prefixes
 import 'package:badges/badges.dart' as packageBadge;
-import 'package:greengrocer/src/home/components/category_tile.dart';
+import 'package:greengrocer/src/pages/home/components/category_tile.dart';
 
 // ignore: must_be_immutable
 class HomeTab extends StatefulWidget {
