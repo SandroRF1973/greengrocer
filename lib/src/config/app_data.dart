@@ -64,6 +64,7 @@ List<ItemModel> items = [
   papaya,
 ];
 
+// Lista de categorias
 List<String> categories = [
   'Frutas',
   'Grãos',
