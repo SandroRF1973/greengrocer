@@ -23,7 +23,9 @@ class ItemTile extends StatelessWidget {
           onTap: () {
             Navigator.of(context).push(
               MaterialPageRoute(builder: (c) {
-                return const ProductScreen();
+                return ProductScreen(
+                  item: item,
+                );
               }),
             );
           },
