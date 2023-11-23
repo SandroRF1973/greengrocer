@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:greengrocer/src/config/custom_colors.dart';
+import 'package:greengrocer/src/services/utils_services.dart';
 
 class CartTab extends StatelessWidget {
-  const CartTab({super.key});
+  CartTab({super.key});
+
+  final UtilsServices utilsServices = UtilsServices();
 
   @override
   Widget build(BuildContext context) {
@@ -20,6 +24,7 @@ class CartTab extends StatelessWidget {
             height: 20,
           ),
           Container(
+            padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: const BorderRadius.vertical(
@@ -33,15 +38,41 @@ class CartTab extends StatelessWidget {
                 ),
               ],
             ),
-            child: const Column(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Text(
+                const Text(
                   'Total geral',
                   style: TextStyle(
                     fontSize: 12,
                   ),
                 ),
-                Text('50,00'),
+                Text(
+                  utilsServices.priceToCurrency(50.5),
+                  style: TextStyle(
+                    fontSize: 23,
+                    color: CustomColors.customSwatchColor,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(
+                  height: 50,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: CustomColors.customSwatchColor,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(18),
+                      ),
+                    ),
+                    onPressed: () {},
+                    child: const Text(
+                      'Concluir pedido',
+                      style: TextStyle(
+                        fontSize: 18,
+                      ),
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
