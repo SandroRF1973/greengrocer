@@ -84,7 +84,7 @@ List<CartItemModel> cartItems = [
     quantity: 1,
   ),
   CartItemModel(
-    item: apple,
+    item: guava,
     quantity: 3,
   ),
 ];
