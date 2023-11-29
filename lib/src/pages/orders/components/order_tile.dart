@@ -65,9 +65,14 @@ class OrderTile extends StatelessWidget {
                   ),
 
                   // Status do pedido
-                  const Expanded(
+                  Expanded(
                     flex: 2,
-                    child: OrderStatusWidget(),
+                    child: OrderStatusWidget(
+                      status: order.status,
+                      isOverdue: order.overdueDateTime.isBefore(
+                        DateTime.now(),
+                      ),
+                    ),
                   ),
                 ],
               ),
