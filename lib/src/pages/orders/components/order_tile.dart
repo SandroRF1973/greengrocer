@@ -40,7 +40,7 @@ class OrderTile extends StatelessWidget {
             ],
           ),
           childrenPadding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
-          expandedCrossAxisAlignment: CrossAxisAlignment.start,
+          expandedCrossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             IntrinsicHeight(
               child: Row(
@@ -100,10 +100,21 @@ class OrderTile extends StatelessWidget {
             ),
 
             // Botão Pagamento
-            ElevatedButton.icon(
-              onPressed: () {},
-              icon: Image.asset('assets/app_images/pix.png'),
-              label: const Text('Ver QR Code Pix'),
+            Visibility(
+              visible: order.status == 'pending_payment',
+              child: ElevatedButton.icon(
+                style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                ),
+                onPressed: () {},
+                icon: Image.asset(
+                  'assets/app_images/pix.png',
+                  height: 18,
+                ),
+                label: const Text('Ver QR Code Pix'),
+              ),
             ),
           ],
         ),
