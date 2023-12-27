@@ -1,5 +1,7 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:greengrocer/src/pages/auth/repository/auth_repository.dart';
+import 'package:greengrocer/src/pages/auth/result/auth_result.dart';
 
 class AuthController extends GetxController {
   RxBool isLoading = false.obs;
@@ -12,11 +14,20 @@ class AuthController extends GetxController {
   }) async {
     isLoading.value = true;
 
-    await authRepository.signIn(
+    AuthResult result = await authRepository.signIn(
       email: email,
       password: password,
     );
 
     isLoading.value = false;
+
+    result.when(
+      success: (user) {
+        debugPrint(user.toString());
+      },
+      error: (message) {
+        debugPrint(message);
+      },
+    );
   }
 }
