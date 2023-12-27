@@ -19,6 +19,7 @@ class AuthRepository {
       debugPrint('signin funcionou!');
     } else {
       debugPrint('signin não funcionou!');
+      debugPrint(result['error']);
     }
   }
 }
