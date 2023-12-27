@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:greengrocer/src/constants/endpoints.dart';
+import 'package:greengrocer/src/models/user_model.dart';
 import 'package:greengrocer/src/services/http_manager.dart';
 
 class AuthRepository {
@@ -17,6 +18,9 @@ class AuthRepository {
 
     if (result['result'] != null) {
       debugPrint('signin funcionou!');
+      final user = UserModel.fromMap(result['result']);
+
+      debugPrint(user.toString());
     } else {
       debugPrint('signin não funcionou!');
       debugPrint(result['error']);
