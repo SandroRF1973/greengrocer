@@ -1,11 +1,11 @@
 import 'package:dio/dio.dart';
 
 abstract class HttpMethods {
-  static String post = 'POST';
-  static String get = 'GET';
-  static String put = 'PUT';
-  static String patch = 'PATCH';
-  static String delete = 'DELETE';
+  static const String post = 'POST';
+  static const String get = 'GET';
+  static const String put = 'PUT';
+  static const String patch = 'PATCH';
+  static const String delete = 'DELETE';
 }
 
 class HttpManager {
@@ -20,8 +20,8 @@ class HttpManager {
       ..addAll({
         'content-type': 'application/json',
         'accept': 'application/json',
-        'X-Parse-Application-Id': 'g1Oui3JqxnY4S1ykpQWHwEKGOe0dRYCPvPF4iykc',
-        'X-Parse-REST-API-Key': 'rFBKU8tk0m5ZlKES2CGieOaoYz6TgKxVMv8jRIsN',
+        'X-Parse-Application-Id': 'wK7GcEjr2V4br5q5mlR1kybQ5dvxMFDX0qtE1d6Y',
+        'X-Parse-REST-API-Key': '2kahi62fkWePLWAwC7k8aMrtQkobogcgkruMxbeB',
       });
 
     Dio dio = Dio();
