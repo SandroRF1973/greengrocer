@@ -42,7 +42,7 @@ class HttpManager {
       // Retorno do erro do dio request
       return error.response?.data ?? {};
     } catch (error) {
-      // Retorno de map vazio para erro generalizado
+      // Retorno de map vazio para error generalizado
       return {};
     }
   }
