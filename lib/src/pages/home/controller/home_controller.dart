@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 import 'package:greengrocer/src/models/category_model.dart';
 import 'package:greengrocer/src/pages/home/repository/home_repository.dart';
@@ -12,16 +11,23 @@ class HomeController extends GetxController {
   bool isLoading = false;
   List<CategoryModel> allCategories = [];
 
+  CategoryModel? currentCategory;
+
   void setLoading(bool value) {
     isLoading = value;
     update();
   }
 
   @override
-  onInit() {
+  void onInit() {
     super.onInit();
 
     getAllCategories();
+  }
+
+  void selectCategory(CategoryModel category) {
+    currentCategory = category;
+    update();
   }
 
   Future<void> getAllCategories() async {
@@ -35,7 +41,9 @@ class HomeController extends GetxController {
       success: (data) {
         allCategories.assignAll(data);
 
-        debugPrint('Todas as categorias: $allCategories');
+        if (allCategories.isEmpty) return;
+
+        selectCategory(allCategories.first);
       },
       error: (message) {
         utilsServices.showToast(

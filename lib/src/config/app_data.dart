@@ -67,15 +67,6 @@ List<ItemModel> items = [
   papaya,
 ];
 
-// Lista de categorias
-List<String> categories = [
-  'Frutas',
-  'Grãos',
-  'Verduras',
-  'Temperos',
-  'Cereais',
-];
-
 List<CartItemModel> cartItems = [
   CartItemModel(
     item: apple,
