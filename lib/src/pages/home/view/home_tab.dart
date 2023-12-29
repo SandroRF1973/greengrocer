@@ -1,19 +1,15 @@
 import 'package:add_to_cart_animation/add_to_cart_animation.dart';
 import 'package:add_to_cart_animation/add_to_cart_icon.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:greengrocer/src/config/custom_colors.dart';
-// ignore: library_prefixes
-import 'package:badges/badges.dart' as packageBadge;
+import 'package:badges/badges.dart' as package_badge;
 import 'package:greengrocer/src/config/app_data.dart' as app_data;
 import 'package:greengrocer/src/pages/common_widgets/app_name_widget.dart';
 import 'package:greengrocer/src/pages/common_widgets/custom_shimmer.dart';
 import 'package:greengrocer/src/pages/home/view/components/category_tile.dart';
 import 'package:greengrocer/src/pages/home/view/components/item_tile.dart';
-import 'package:greengrocer/src/pages/home/controller/home_controller.dart';
 import 'package:greengrocer/src/services/utils_services.dart';
 
-// ignore: must_be_immutable
 class HomeTab extends StatefulWidget {
   const HomeTab({super.key});
 
@@ -39,8 +35,6 @@ class _HomeTabState extends State<HomeTab> {
   void initState() {
     super.initState();
 
-    Get.find<HomeController>().printExample();
-
     Future.delayed(
       const Duration(seconds: 1),
       () {
@@ -65,8 +59,8 @@ class _HomeTabState extends State<HomeTab> {
             padding: const EdgeInsets.only(top: 15, right: 15),
             child: GestureDetector(
               onTap: () {},
-              child: packageBadge.Badge(
-                badgeStyle: packageBadge.BadgeStyle(
+              child: package_badge.Badge(
+                badgeStyle: package_badge.BadgeStyle(
                   badgeColor: CustomColors.customContrastColor,
                 ),
                 badgeContent: const Text(
