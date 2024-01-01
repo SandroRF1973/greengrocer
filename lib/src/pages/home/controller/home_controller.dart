@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 import 'package:greengrocer/src/models/category_model.dart';
 import 'package:greengrocer/src/models/item_model.dart';
@@ -17,6 +18,8 @@ class HomeController extends GetxController {
   CategoryModel? currentCategory;
   List<ItemModel> get allProducts => currentCategory?.items ?? [];
 
+  RxString searchTitle = ''.obs;
+
   bool get isLastPage {
     if (currentCategory!.items.length < itemsPerPage) return true;
     return currentCategory!.pagination * itemsPerPage > allProducts.length;
@@ -35,6 +38,14 @@ class HomeController extends GetxController {
   @override
   void onInit() {
     super.onInit();
+
+    debounce(
+      searchTitle,
+      (_) {
+        debugPrint(searchTitle.toString());
+      },
+      time: const Duration(milliseconds: 600),
+    );
 
     getAllCategories();
   }
