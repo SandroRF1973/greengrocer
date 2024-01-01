@@ -42,7 +42,7 @@ class HomeController extends GetxController {
     debounce(
       searchTitle,
       (_) {
-        debugPrint(searchTitle.toString());
+        update();
       },
       time: const Duration(milliseconds: 600),
     );
