@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:greengrocer/src/config/custom_colors.dart';
-import 'package:greengrocer/src/models/cart_item_mode.dart';
-import 'package:greengrocer/src/pages/cart/view/components/cart_tile.dart';
+import 'package:greengrocer/src/models/cart_item_model.dart';
 import 'package:greengrocer/src/pages/common_widgets/payment_dialog.dart';
 import 'package:greengrocer/src/services/utils_services.dart';
 import 'package:greengrocer/src/config/app_data.dart' as app_data;
@@ -17,19 +16,20 @@ class _CartTabState extends State<CartTab> {
   final UtilsServices utilsServices = UtilsServices();
 
   void removeItemFromCart(CartItemModel cartItem) {
-    setState(() {
-      app_data.cartItems.remove(cartItem);
-      utilsServices.showToast(message: '${cartItem.item.itemName} removido(a) do carrinho');
-    });
+    // setState(() {
+    //   app_data.cartItems.remove(cartItem);
+    //   utilsServices.showToast(message: '${cartItem.item.itemName} removido(a) do carrinho');
+    // });
   }
 
   double cartTotalPrice() {
-    double total = 0;
-    for (var item in app_data.cartItems) {
-      total += item.totalPrice();
-    }
+    // double total = 0;
+    // for (var item in app_data.cartItems) {
+    //   total += item.totalPrice();
+    // }
 
-    return total;
+    // return total;
+    return 0;
   }
 
   @override
@@ -42,12 +42,13 @@ class _CartTabState extends State<CartTab> {
         children: [
           Expanded(
             child: ListView.builder(
-              itemCount: app_data.cartItems.length,
+              itemCount: 0,
               itemBuilder: (_, index) {
-                return CartTile(
-                  cartItem: app_data.cartItems[index],
-                  remove: removeItemFromCart,
-                );
+                return Container();
+                // return CartTile(
+                //   cartItem: app_data.cartItems[index],
+                //   remove: removeItemFromCart,
+                // );
               },
             ),
           ),
