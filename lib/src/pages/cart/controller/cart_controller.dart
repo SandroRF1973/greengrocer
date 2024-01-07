@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:greengrocer/src/models/cart_item_model.dart';
 import 'package:greengrocer/src/pages/auth/controller/auth_controller.dart';
@@ -20,6 +19,16 @@ class CartController extends GetxController {
     getCartItems();
   }
 
+  double cartTotalPrice() {
+    double total = 0;
+
+    for (final item in cartItems) {
+      total += item.totalPrice();
+    }
+
+    return total;
+  }
+
   Future<void> getCartItems() async {
     final CartResult<List<CartItemModel>> result = await cartRepository.getCartItems(
       token: authController.user.token!,
@@ -30,8 +39,6 @@ class CartController extends GetxController {
       success: (data) {
         cartItems = data;
         update();
-
-        debugPrint(data.toString());
       },
       error: (message) {
         utilsServices.showToast(
