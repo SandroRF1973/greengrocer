@@ -35,6 +35,7 @@ class _CartTabState extends State<CartTab> {
       ),
       body: Column(
         children: [
+          // Lista de itens do carrinho
           Expanded(
             child: GetBuilder<CartController>(
               builder: (controller) {
