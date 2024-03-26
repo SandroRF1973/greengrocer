@@ -63,6 +63,8 @@ class _CartTabState extends State<CartTab> {
               },
             ),
           ),
+
+          // Total e botáo de concluir pedido
           Container(
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(

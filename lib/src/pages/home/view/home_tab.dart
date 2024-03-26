@@ -45,7 +45,10 @@ class _HomeTabState extends State<HomeTab> {
         title: const AppNameWidget(),
         actions: [
           Padding(
-            padding: const EdgeInsets.only(top: 15, right: 15),
+            padding: const EdgeInsets.only(
+              top: 15,
+              right: 15,
+            ),
             child: GetBuilder<CartController>(
               builder: (controller) {
                 return GestureDetector(
