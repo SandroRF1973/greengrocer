@@ -122,7 +122,9 @@ class _CartTabState extends State<CartTab> {
                                 if (result ?? false) {
                                   cartController.checkoutCart();
                                 } else {
-                                  utilsServices.showToast(message: 'Pedido não confirmado');
+                                  utilsServices.showToast(
+                                    message: 'Pedido não confirmado',
+                                  );
                                 }
                               },
                         child: controller.isCheckoutLoading

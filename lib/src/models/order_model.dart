@@ -22,6 +22,7 @@ class OrderModel {
 
   @JsonKey(name: 'copiaecola')
   String copyAndPaste;
+
   double total;
   OrderModel({
     required this.id,
@@ -36,4 +37,9 @@ class OrderModel {
 
   factory OrderModel.fromJson(Map<String, dynamic> json) => _$OrderModelFromJson(json);
   Map<String, dynamic> toJson() => _$OrderModelToJson(this);
+
+  @override
+  String toString() {
+    return 'OrderModel(id: $id, createdDateTime: $createdDateTime, overdueDateTime: $overdueDateTime, items: $items, status: $status, qrCodeImage: $qrCodeImage, copyAndPaste: $copyAndPaste, total: $total)';
+  }
 }
