@@ -89,7 +89,7 @@ UserModel user = UserModel(
   password: '',
 );
 
-// List<OrderModel> orders = [
+List<OrderModel> orders = [
 //   // Pedido 01
 //   OrderModel(
 //     qrCodeImage: '',
@@ -135,4 +135,4 @@ UserModel user = UserModel(
 //       // ),
 //     ],
 //   ),
-// ];
+];
